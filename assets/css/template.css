@@ -222,48 +222,6 @@ blockquote:before {
     font-size: 18px;
 }
 
-/*------------------------------------------------------------------
-[Progress Bars]
-*/
-
-.progress-item {
-    margin: 0 0 30px;
-}
-
-.progress-title {
-    font-size: 15px;
-    margin: 0 0 15px;
-}
-
-.progress {
-    background-color: #ffffff;
-    border-radius: 0;
-    box-shadow: none;
-    height: 2px;
-    margin: 0;
-    overflow: visible;
-    box-shadow: none;
-}
-
-.progress-bar {
-    position: relative;
-    background-color: #ba9d49;
-    border-radius: 0;
-    box-shadow: none;
-}
-
-.progress-bar:after {
-    position: absolute;
-    background: inherit;
-    border-radius: 50%;
-    border: 4px solid #ffffff;
-    content: "";
-    height: 14px;
-    width: 14px;
-    top: 50%;
-    right: -1px;
-    margin-top: -7px;
-}
 
 /*------------------------------------------------------------------
 [Forms]
@@ -1096,22 +1054,6 @@ ul.page-numbers > li > span:hover {
 
 .pie-chart .chart-title > * {
     margin: 0;
-}
-
-/*------------------------------------------------------------------
-[Social Icons]
-*/
-
-.social-list {
-    text-align: right;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.social-list > li {
-    display: inline-block;
-    margin: 0 0 0 20px;
 }
 
 /*!------------------------------------------------------------------
