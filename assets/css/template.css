@@ -58,6 +58,11 @@ iframe {
     margin: 0;
 }
 
+.project-titles {
+    font-weight:bold;
+    
+}
+
 .service-list > li {
     margin: 20px 0;
 }
