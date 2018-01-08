@@ -194,16 +194,11 @@ ol > li {
     padding: 50px 0;
 }
 
-.parallax {
-    background-color: transparent;
-}
-
 /*------------------------------------------------------------------
 [Pages]
 */
 
 .split-image {
-    display: none;
     background-position: 50% 0;
     background-color: #222222;
 }
