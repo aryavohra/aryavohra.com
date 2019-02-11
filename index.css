@@ -39,7 +39,8 @@ body {
 }
 
 h1 {
-	font-family: 'Merriweather';
+	font-family: 'Roboto';
+	font-weight: 700;
 	font-size: 40px;
 	max-width: 700px;
 	text-align: center;
@@ -50,11 +51,11 @@ h1 {
 a {
 	text-decoration: none;
 	font-weight: bold;
-	color: rgba(41, 128, 185, 1.0);
+	color: #A52344;
 }
 
 h2 {
-	font-family: 'Merriweather', sans-serif;
+	font-family: 'Roboto', sans-serif;
 }
 
 p {
@@ -68,6 +69,7 @@ ul {
 	list-style-type: none;
 	max-width: 550px;
 	margin: auto;
+	color: gray;
 }
 
 li {
@@ -80,12 +82,11 @@ li {
 }
 
 ul li::before {
-	content: "\25E6";
-	color: #333;
+	content: "•";
 	font-weight: bold;
 	display: inline-block;
-	width: 1em;
-	margin-left: -1em;
+	width: 0.8em;
+	margin-left: 0em;
 }
 
 #pic {
@@ -108,7 +109,7 @@ ul li::before {
 .bottomGradient{
 	height: 150px;
 	width: 100%;
-	background:linear-gradient(to top, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+	background: linear-gradient(to top, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
 	position: fixed;
 	bottom: 0;
 	z-index: 100;
@@ -116,8 +117,7 @@ ul li::before {
 
 .header {
 	color: #333333;
-	font-style: italic;
-	font-family: 'Merriweather', serif;
+	font-family: 'Roboto', serif;
 	margin: 15px auto;
 	font-size: 32px;
 	max-width: 500px;
@@ -134,7 +134,7 @@ ul li::before {
 
 .tag {
 	font-family: 'Roboto Mono';
-	padding: 6.5px;
+	padding: 3px;
 	border-radius: 4px;
 	border: 2px 2px;
 	border: dashed rgba(236, 240, 241,1.0);
@@ -151,4 +151,17 @@ ul li::before {
 	position: fixed;
 	left: 100px;
 	top: 100px;
+}
+
+.sidebar ul {
+	list-style-type: none;
+}
+
+.sidebar ul li::before {
+	content: "";
+}
+
+.sidebar a {
+	border: 1px;
+	border-radius: 10px;
 }
