@@ -1,37 +1,295 @@
 <html>
-
 	<head>
-
-		<link rel="icon" href="me_old.jpg">
-		<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-		<link href="https://fonts.googleapis.com/css?family=Merriweather" rel="stylesheet">
-		<link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
-		<link rel="stylesheet" type="text/css" href="index.css" media="screen"/>
+		<link
+			href="https://fonts.googleapis.com/css?family=EB+Garamond"
+			rel="stylesheet"
+		/>
+		<link
+			href="https://fonts.googleapis.com/css?family=Courier+Prime"
+			rel="stylesheet"
+		/>
+		<link
+			rel="stylesheet"
+			type="text/css"
+			href="index.css"
+			media="screen"
+		/>
 		<title>Arya Vohra</title>
-		<meta charset="UTF-8"/>
+		<meta charset="UTF-8" />
 		<!-- Global site tag (gtag.js) - Google Analytics -->
-		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-111744544-2"></script>
-		<script src="index.js"></script>
-		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+		<script
+			async
+			src="https://www.googletagmanager.com/gtag/js?id=UA-111744544-2"
+		></script>
+		<link
+			rel="stylesheet"
+			href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
+			integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/"
+			crossorigin="anonymous"
+		/>
 		<script>
-		  window.dataLayer = window.dataLayer || [];
-		  function gtag(){dataLayer.push(arguments);}
-		  gtag('js', new Date());
+			window.dataLayer = window.dataLayer || [];
+			function gtag() {
+				dataLayer.push(arguments);
+			}
+			gtag("js", new Date());
 
-		  gtag('config', 'UA-111744544-2');
+			gtag("config", "UA-111744544-2");
 		</script>
-
-
+		<link
+			rel="icon"
+			href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎯</text></svg>"
+		/>
 	</head>
-	
+
 	<body>
+		<h1>Arya Vohra</h1>
 
-		<h3>Arya Vohra</h3>
-		<br>
+		<!-- <div class="sidebar">
+			<ul>
+				<li><a href="index.html">me</a></li>
+				<li><a onClick>writings</a></li>
+			</ul>
+		</div> -->
 
-		Currently under maintenance 🛠 
+		<div class="content">
+			<br />
+			<br />
+			<img id="pic" src="./hi.JPG" />
+			<br />
+			<br />
+
+			<p class="subtext">
+				hi! I'm
+				<a
+					href="https://en.wikipedia.org/wiki/Arya_(name)"
+					class="underliner"
+					>arya</a
+				>!
+				<br />
+				<i
+					>currently: playing
+					<a class="underliner" href="goat.mp4">Polyphia</a> on
+					guitar, making
+					<a
+						class="underliner"
+						href="https://soundcloud.com/user-563649460/the-teens-fighting-against-the-philippine-drug-war"
+						>podcasts</a
+					>
+					on inspiring students, and stumbling through computational
+					linguistics research (TBD)</i
+				>
+				<br />
+				<br />
+				I'm 19 years old, from India, born and raised in Singapore and am
+				currently serving in the Singapore Armed Forces.
+				<br />
+				<br />
+				I've always been curious about the <i>magical</i> things that
+				technology can do — that's why I've spent my teenage years
+				exploring the field alongside my two best buddies (<a
+					class="underliner"
+					href="https://khushjammu.com/"
+					>Khush</a
+				>
+				and
+				<a class="underliner" href="https://taichikato.com/">Taichi</a
+				>). Along the way we've built our own startup, conducted NLP
+				research, and hackathon-hopped around Asia.
+				<br />
+				<br />
+				In junior and senior year of high school, I began to seek more
+				perspectives and broaden my intellectual horizons. I focused on
+				studying Philosophy and Pure Mathematics. Thanks to this, I'm
+				now curious about a lot more than tech: linguistics,
+				storytelling, mental health and law are fields I hope to learn
+				more about over the next two years.
+				<br />
+				<br />
+				I graduated in summer 2020, and I'm now serving two years of
+				compulsory national service before university. I'm really
+				excited to use this time to grow and experiment.
+				<br />
+				<br />
+				Here's my
+				<a class="underliner" href="mailto@arya.vohra04@gmail.com"
+					>email</a
+				>
+				if you want to chat or work on something together!
+				<br />
+				<br />
+			</p>
+
+			<br />
+
+			<h2 class="header">some tech I've built</h2>
+			<ul>
+				<li>
+					<p>
+						<a class="tag" href="https://github.com/questo-ai/Kafka"
+							>Kafka</a
+						>
+						<strong>(April '20)</strong> this ended up being the
+						first public release of dependency parsing on iOS! A
+						month-long project that taught how to use CoreML and
+						optimise NLP code.
+					</p>
+				</li>
+
+				<li>
+					<p>
+						<a
+							class="tag"
+							href="https://github.com/ianramzy/decentralized-video-chat"
+							>Zipcall.io</a
+						>
+						<strong>(May '20)</strong> learnt peer-to-peer tech and
+						RTC through implementing group vidchat on Zipcall.io
+						(250k users).
+					</p>
+				</li>
+
+				<li>
+					<p>
+						<a class="tag" href="https://questo.ai/">Questo</a>
+						<strong>('16-'19)</strong> — generate test questions
+						from a picture of a textbook. $112k cloud funding from
+						Google and IBM. #1 on Product Hunt (11/2/19),
+						<a
+							class="tag"
+							href="https://news.ycombinator.com/item?id=16637415"
+							>Hacker News feature</a
+						>
+					</p>
+				</li>
+
+				<li>
+					<p>
+						<a
+							class="tag"
+							href="http://getphotonify.strikingly.com/"
+							>Photonify</a
+						>
+						<strong>('17, '19)</strong> — a photo assistant app that
+						helps you take better photos in real-time. Won $40,000
+						"Most Creative" prize at Startup Weekend 2017.
+						<a
+							class="tag"
+							href="https://www.gic.com.sg/newsroom/news/startup-weekend-singapore-swsg-mega-2017-winners-announced"
+							>1</a
+						><a
+							class="tag"
+							href="https://www.straitstimes.com/business/companies-markets/startup-weekend-singapore-hackathon-gets-over-100-ideas"
+							>2</a
+						>
+					</p>
+				</li>
+
+				<li>
+					<p>
+						<a
+							class="tag"
+							href="https://devpost.com/software/bookworm-aye8z5"
+							>Bookworm</a
+						>
+						<strong>(2018)</strong> — software that uses CV to let
+						you interact with real, paper books like digital
+						objects. Touch any word, diagram or picture and learn
+						more on a companion app.
+					</p>
+				</li>
+
+				<li>
+					<p>
+						<a
+							class="tag"
+							href="https://devpost.com/software/hequals-h"
+							>h=</a
+						>
+						<strong>(2018)</strong> — an AI powered human resource
+						manager without bias. It analyses code contributions to
+						assign tasks in a team based on pure meritocratic skill,
+						thus avoiding bias.
+						<a
+							class="tag"
+							href="https://sg.news.yahoo.com/built-3-high-school-students-hequals-platform-aims-100938736.html"
+							>1</a
+						>
+					</p>
+				</li>
+
+				<li>
+					<p>
+						more details on some of these in my technical
+						<a
+							class="tag"
+							href="https://aryavohra.com/resume (1).pdf"
+							>resume</a
+						>.
+					</p>
+				</li>
+			</ul>
+
+			<br />
+
+			<h2 class="header">hackathon experience (hostin & hackin)</h2>
+			<ul>
+				<li>
+					<p>
+						in my hackathon
+						<a class="tag" href="https://aryavohra.com/resume.pdf"
+							>resume</a
+						>!
+					</p>
+				</li>
+			</ul>
+
+			<br />
+
+			<h2 class="header">music (playing & writing!)</h2>
+			<p>
+				click <a class="underliner" href="music.html">here</a> to find
+				out more about my music work>
+			</p>
+			<ul>
+				<li>
+					<p>
+						original music for
+						<a
+							class="tag"
+							href="https://soundcloud.com/user-563649460/the-teens-fighting-against-the-philippine-drug-war"
+							>podcasts</a 🎹
+						>
+					</p>
+				</li>
+				<li>
+					<p>
+						polyphia
+						<a class="tag" href="music/goat.mp4">licks</a> 😋
+					</p>
+				</li>
+				<li>
+					<p><a class="tag" href="">r&b ish stuff</a></p>
+				</li>
+			</ul>
+		</div>
+
+		<div class="bottomGradient"></div>
+
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+
+		<div id="footer"><p>Arya Vohra, 2021.</p></div>
+
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
 	</body>
-
-
-
 </html>
