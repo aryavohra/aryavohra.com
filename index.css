@@ -124,19 +124,6 @@ video {
 	margin-right: 5em;
 }
 
-.bottomGradient {
-	height: 100px;
-	width: 100%;
-	background: linear-gradient(
-		to top,
-		rgba(255, 255, 255, 1),
-		rgba(255, 255, 255, 0)
-	);
-	position: fixed;
-	bottom: 0;
-	z-index: 100;
-}
-
 .header {
 	color: #333333;
 	font-family: "EB Garamond", serif;
@@ -166,4 +153,24 @@ video {
 	border: solid rgba(236, 240, 241, 1);
 	background-color: rgba(236, 240, 241, 1);
 	-webkit-transition: background-color 0.5s;
+}
+
+.nameanimated {
+	width: 7em;
+}
+
+.nameanimated .hindi {
+	display: none;
+}
+
+.nameanimated:hover .english {
+	display: none;
+	-webkit-animation: fadein 0.5s;
+	animation: fadein 0.5s;
+}
+
+.nameanimated:hover .hindi {
+	display: inline;
+	-webkit-animation: fadein 0.5s;
+	animation: fadein 0.5s;
 }
