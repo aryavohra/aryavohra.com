@@ -6,7 +6,13 @@ body {
 	-ms-animation: fadein 1s; /* Internet Explorer */
 	-o-animation: fadein 1s; /* Opera < 12.1 */
 	animation: fadein 1s;
-	background-color: #ffffff;
+	font-family: "EB Garamond", sans-serif;
+	background-color: #faf9f6;
+	/*background-color: #fffafa;*/
+	width: 45em;
+	margin: auto;
+	color: #606060;
+	line-height: 2;
 }
 
 @keyframes fadein {
@@ -60,12 +66,9 @@ body {
 
 h1 {
 	font-family: "EB Garamond";
-	font-weight: 700;
 	font-size: 3em;
-	max-width: 700px;
-	text-align: center;
-	min-width: 200px;
-	margin: auto;
+	color: #333333;
+	margin: 0;
 }
 
 a {
@@ -74,24 +77,12 @@ a {
 	color: #a52344;
 }
 
-h2 {
-	font-family: "EB Garamond", sans-serif;
-}
-
 p {
-	font-family: "EB Garamond", sans-serif;
 	font-size: 1.3em;
-	color: #333333;
-	line-height: 2;
-}
-
-ul {
-	list-style-type: none;
-	color: gray;
 }
 
 li {
-	font-family: "EB Garamond", sans-serif;
+	font-size: 1.3em;
 	margin-bottom: 1em;
 	vertical-align: bottom;
 	line-height: 2;
@@ -101,42 +92,27 @@ video {
 	max-height: 50em;
 }
 
-#image {
-}
-
-#pic {
-	margin-left: auto;
-	margin-right: auto;
-	display: block;
-	max-width: 50em;
-	-webkit-box-shadow: 0px 4px 8px 0 rgba(0, 0, 0, 0.2);
-	-moz-box-shadow: 0px 4px 8px 0 rgba(0, 0, 0, 0.2);
-	box-shadow: 0px 4px 8px 0 rgba(0, 0, 0, 0.2);
-}
-
-#footer {
-	text-align: center;
-}
-
-.content {
-	width: 45em;
-	margin: auto;
-}
-
 .social {
 	margin-right: 5em;
 }
 
 .header {
 	color: #333333;
-	font-family: "EB Garamond", serif;
 	margin: 1em auto;
 	font-size: 2em;
 }
 
-.subtext {
-	font-family: "EB Garamond", serif;
-	color: gray;
+.nav {
+	font-size: 1.3em;
+	text-decoration: underline;
+	margin-left: 1em;
+	margin-right: 1em;
+}
+
+.nav:hover {
+	text-decoration: none;
+	margin-left: 1em;
+	-webkit-transition: background-color 0.5s;
 }
 
 .tag {
@@ -149,18 +125,14 @@ video {
 	background-color: rgba(236, 240, 241, 0.1);
 }
 
-.underliner {
-	text-decoration: underline;
-}
-
 .tag:hover {
 	border: solid rgba(236, 240, 241, 1);
 	background-color: rgba(236, 240, 241, 1);
 	-webkit-transition: background-color 0.5s;
 }
 
-.nameanimated {
-	width: 7em;
+.underliner {
+	text-decoration: underline;
 }
 
 .nameanimated .hindi {
@@ -177,4 +149,28 @@ video {
 	display: inline;
 	-webkit-animation: fadein 0.5s;
 	animation: fadein 0.5s;
+}
+
+#pre {
+	text-align: center;
+	margin-bottom: 2.5em;
+}
+
+#pic {
+	margin-left: auto;
+	margin-right: auto;
+	display: block;
+	max-width: 45em;
+	-webkit-box-shadow: 0px 4px 8px 0 rgba(0, 0, 0, 0.2);
+	-moz-box-shadow: 0px 4px 8px 0 rgba(0, 0, 0, 0.2);
+	box-shadow: 0px 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+#footer {
+	text-align: center;
+}
+
+#footerText {
+	margin-top: 8em;
+	margin-bottom: 8em;
 }

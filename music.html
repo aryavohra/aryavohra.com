@@ -20,17 +20,19 @@
 			rel="icon"
 			href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎯</text></svg>"
 		/>
+		<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+		<script>
+			$(function () {
+				$("#pre").load("header.html");
+				$("#footer").load("footer.html");
+			});
+		</script>
 	</head>
 
 	<body>
+		<div id="pre"></div>
+
 		<div class="content">
-			<br />
-			<br />
-
-			<p>
-				<a class="underliner" href="index.html">back to main page</a>
-			</p>
-
 			<h2 class="header">me as a musician</h2>
 
 			<p>
@@ -94,23 +96,7 @@
 				</li>
 			</ul>
 
-			<div class="bottomGradient"></div>
-
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
-
-			<div id="footer"><p>Arya Vohra, 2021.</p></div>
-
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
+			<div id="footer"></div>
 		</div>
 	</body>
 </html>
