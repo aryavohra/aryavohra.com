@@ -1,232 +1,35 @@
-<html>
+<!doctype html>
+<html lang="en">
 	<head>
-		<link
-			href="https://fonts.googleapis.com/css?family=EB+Garamond"
-			rel="stylesheet"
-		/>
-		<link
-			href="https://fonts.googleapis.com/css?family=Courier+Prime"
-			rel="stylesheet"
-		/>
-		<link
-			rel="stylesheet"
-			type="text/css"
-			href="index.css"
-			media="screen"
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta
+			name="description"
+			content="Arya Vohra's website is coming soon."
 		/>
 		<title>Arya Vohra</title>
-		<meta charset="UTF-8" />
-		<!-- Global site tag (gtag.js) - Google Analytics -->
-		<script
-			async
-			src="https://www.googletagmanager.com/gtag/js?id=UA-111744544-2"
-		></script>
-		<script>
-			window.dataLayer = window.dataLayer || [];
-			function gtag() {
-				dataLayer.push(arguments);
-			}
-			gtag("js", new Date());
-
-			gtag("config", "UA-111744544-2");
-		</script>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&display=swap"
+			rel="stylesheet"
+		/>
+		<link rel="stylesheet" href="index.css" />
 		<link
 			rel="icon"
-			href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎯</text></svg>"
+			href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23f4efe4'/%3E%3Ccircle cx='32' cy='32' r='7' fill='%23231f1a'/%3E%3C/svg%3E"
 		/>
-		<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-		<script>
-			$(function () {
-				$("#pre").load("header.html");
-				$("#footer").load("footer.html");
-			});
-		</script>
 	</head>
 	<body>
-		<div id="pre"></div>
-
-		<div id="picWrapper">
-			<img id="pic" src="./hi.JPG" />
-		</div>
-		
-		<div class="content">
-			under construction...
-		</div>
-
-<!-- 		<div class="content">
-			<br />
-			<br />
-			<div style="text-align: center;">
-				<p style="font-size: 1.1em; line-height: 1.5;">
-					<i
-						>currently: contributing to reinforcement learning research @ MIT Media Lab, making
-						<a
-							class="underliner"
-							href="https://www.nytimes.com/2021/07/01/learning/winners-of-our-fourth-annual-podcast-contest.html"
-							>podcasts</a
-						>
-						on inspiring students, and playing
-						<a class="underliner" href="music.html">Polyphia</a> on
-						guitar</i
-					>
-				</p>
-			</div>
-
-			<p>
-				hi! I'm
-				<a
-					href="https://en.wikipedia.org/wiki/Arya_(name)"
-					class="nameanimated"
-				>
-					<span class="english">Arya</span>
-					<span class="hindi">आर्या</span> </a
-				>!
-				<br />
-				<br />
-				I'm 19 years old, born and raised in Singapore and am currently
-				serving in the Singapore Armed Forces.
-				<br />
-				<br />
-				I've always been curious about the <i>magical</i> things that
-				technology can do — that's why I've spent my teenage years
-				exploring the field alongside my two best buddies (<a
-					class="underliner"
-					href="https://khushjammu.com/"
-					>Khush</a
-				>
-				and
-				<a class="underliner" href="https://taichikato.com/">Taichi</a
-				>). Along the way we built our own startup, conducted NLP
-				research, and hackathon-hopped around Asia.
-				<br />
-				<br />
-				In junior and senior years of high school, I wanted to seek
-				intellectually diverse perspectives and broaden my horizons, so
-				I focused on Philosophy and Pure Mathematics. Thanks to this,
-				I'm now learning about many fields beyond just tech:
-				linguistics, storytelling, mental health and law.
-				<br />
-				<br />
-				I graduated from UWCSEA in the summer of 2020, and I'm now
-				serving two years of compulsory national service before
-				university. I'm really excited to use this time to grow and
-				experiment.
-				<br />
-				<br />
-				Here's my
-				<a class="underliner" href="mailto:arya.vohra04@gmail.com"
-					>email</a
-				>
-				if you want to chat or work on something together!
-			</p>
-
-			<h2 class="header">some tech I've built</h2>
-			<ul>
-				<li>
-					<a
-						class="tag"
-						href="https://github.com/ianramzy/decentralized-video-chat"
-						>Zipcall.io</a
-					>
-					(May '20) — learnt peer-to-peer tech and RTC through
-					implementing group vidchat on Zipcall.io (250k users).
-				</li>
-				<li>
-					<a class="tag" href="https://github.com/questo-ai/Kafka"
-						>Kafka</a
-					>
-					(April '20) — this ended up being the first public release
-					of dependency parsing on iOS! A month-long project that
-					taught how to use CoreML and optimise NLP code.
-				</li>
-				<li>
-					<a class="tag" href="https://questo.ai/">Questo</a>
-					('16 --'19) — generate test questions from a picture of a
-					textbook. $112k cloud funding from Google and IBM. #1 on
-					Product Hunt (11/2/19),
-					<a
-						class="underliner"
-						href="https://news.ycombinator.com/item?id=16637415"
-						>Hacker News feature</a
-					>
-				</li>
-				<li>
-					<a class="tag" href="http://getphotonify.strikingly.com/"
-						>Photonify</a
-					>
-					('17) — a photo assistant app that helps you take better
-					photos in real-time. Won $40,000 "Most Creative" prize at
-					Startup Weekend 2017.
-					<a
-						class="underliner"
-						href="https://www.gic.com.sg/newsroom/news/startup-weekend-singapore-swsg-mega-2017-winners-announced"
-						>1</a
-					>
-					<a
-						class="underliner"
-						href="https://www.straitstimes.com/business/companies-markets/startup-weekend-singapore-hackathon-gets-over-100-ideas"
-						>2</a
-					>
-				</li>
-				<li>
-					<a
-						class="tag"
-						href="https://devpost.com/software/bookworm-aye8z5"
-						>Bookworm</a
-					>
-					('18) — software that uses CV to let you interact with real,
-					paper books like digital objects. Touch any word, diagram,
-					or picture to learn more on a companion app.
-				</li>
-				<li>
-					<a class="tag" href="https://devpost.com/software/hequals-h"
-						>h=</a
-					>
-					('18) — an AI powered human resource manager without bias.
-					It analyses code contributions to assign tasks in a team
-					based on pure meritocratic skill, thus avoiding bias.
-					<a
-						class="underliner"
-						href="https://sg.news.yahoo.com/built-3-high-school-students-hequals-platform-aims-100938736.html"
-						>1</a
-					>
-				</li>
-			</ul>
-
-			<h2 class="header">hackathon experience (hosting & hacking)</h2>
-			<p>
-				5x hackathon wins & 3x hackathons organised, details in my
-				<a class="tag" href="resume (1).pdf">resume</a>!
-			</p>
-
-			<h2 class="header">music (playing & writing)</h2>
-			<p>
-				click <a class="underliner" href="music.html">here</a> to find
-				out more about my music work
-			</p>
-			<ul>
-				<li>
-					original music for
-					<a
-						class="tag"
-						href="https://soundcloud.com/user-563649460/the-teens-fighting-against-the-philippine-drug-war"
-					>
-						podcasts</a
-					>
-					🎹
-				</li>
-				<li>
-					polyphia
-					<a class="tag" href="music/goat small.mp4">licks</a> 😋
-				</li>
-				<li>
-					<a class="tag" href="music/bas fkj small.mp4"
-						>r&b ish stuff</a
-					>
-				</li>
-			</ul>
-		</div> -->
-
-		<div id="footer"></div>
+		<main class="page" aria-label="Coming soon">
+			<section class="announcement" aria-live="polite">
+				<h1 aria-label="coming soon">
+					<span>coming soon</span>
+					<span class="dots" aria-hidden="true">
+						<span>.</span><span>.</span><span>.</span>
+					</span>
+				</h1>
+			</section>
+		</main>
 	</body>
 </html>
