@@ -1,35 +1,608 @@
-<!doctype html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<meta
-			name="description"
-			content="Arya Vohra's website is coming soon."
-		/>
-		<title>Arya Vohra</title>
-		<link rel="preconnect" href="https://fonts.googleapis.com" />
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-		<link
-			href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&display=swap"
-			rel="stylesheet"
-		/>
-		<link rel="stylesheet" href="index.css" />
-		<link
-			rel="icon"
-			href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23f4efe4'/%3E%3Ccircle cx='32' cy='32' r='7' fill='%23231f1a'/%3E%3C/svg%3E"
-		/>
-	</head>
-	<body>
-		<main class="page" aria-label="Coming soon">
-			<section class="announcement" aria-live="polite">
-				<h1 aria-label="coming soon">
-					<span>coming soon</span>
-					<span class="dots" aria-hidden="true">
-						<span>.</span><span>.</span><span>.</span>
-					</span>
-				</h1>
-			</section>
-		</main>
-	</body>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+    <title>Monoplot: Plots in the monospace web</title>
+    <link rel="stylesheet" href="ref/the-monospace-web/src/reset.css" />
+    <link rel="stylesheet" href="ref/the-monospace-web/src/index.css" />
+</head>
+
+<body>
+    <table class="header">
+        <tr>
+            <td class="width-auto">
+                <h1 class="title">Monoplot: Plots in the monospace web</h1>
+                <span class="subtitle">A showcase of different plot styles</span>
+            </td>
+        </tr>
+    </table>
+
+    <h2 id="reference">Reference</h2>
+
+    <p>Here is a classic bar plot based on the reference design principles from the monospace web project.</p>
+
+    <figure>
+        <pre>
+                      Things I Have
+                                              
+    │                                     ████ Usable
+15  │
+    │                                     ░░░░ Broken
+    │
+12  │             ░            
+    │             ░            
+    │   ░         ░              
+ 9  │   ░         ░              
+    │   ░         ░              
+    │   ░         ░                    ░
+ 6  │   █         ░         ░          ░
+    │   █         ░         ░          ░
+    │   █         ░         █          ░
+ 3  │   █         █         █          ░
+    │   █         █         █          ░
+    │   █         █         █          ░
+ 0  └───▀─────────▀─────────▀──────────┴─────────────
+      Socks     Jeans     Shirts   USB Drives
+</pre>
+    </figure>
+
+    <h2 id="line-charts">Line Charts</h2>
+
+    <p>Here we explore different styles of line charts. Since we are constrained to a character grid, we can achieve
+        different "flavors" of lines using different box-drawing techniques.</p>
+
+    <p><strong>1. The Stepped Line (Classic)</strong></p>
+    <p>Uses rounded corners and horizontal bridges to create a very clean, geometric feel.</p>
+
+    <figure>
+        <pre>
+                      Revenue 2024
+                                              
+    │
+ 40 │                              ╭───•───╮
+    │                              │       ╰───•
+ 30 │              ╭───•───╮       │
+    │              │       ╰───•───╯
+ 20 │      ╭───•───╯
+    │      │
+ 10 │  •───╯
+    │
+  0 └──┴───────┴───────┴───────┴───────┴───────┴───────
+      Jan     Feb     Mar     Apr     May     Jun
+</pre>
+    </figure>
+
+    <p><strong>2. The Dotted Path</strong></p>
+    <p>Uses heavy dots to map out a trajectory without heavy connecting lines, offering a lighter visual weight.</p>
+
+    <figure>
+        <pre>
+                       User Growth
+                                              
+    │                                          ●
+ 4k │                                      ●   
+    │                                  ●       
+ 3k │                                          
+    │                      ●       ●           
+ 2k │                  ●                       
+    │              ●                           
+ 1k │          ●                               
+    │  ●   ●                                   
+  0 └──┴───┴───┴───┴───┴───┴───┴───┴───┴───┴───┴───
+       1   2   3   4   5   6   7   8   9  10  11
+</pre>
+    </figure>
+
+    <p><strong>3. The Smooth Line</strong></p>
+    <p>Connecting data points directly using a vector overlay mapped computationally to the text grid, resulting in pure
+        geometric lines while retaining the monospace aesthetic.</p>
+
+    <figure style="position: relative;" id="smooth-figure">
+        <pre>
+                      Revenue 2024
+                                              
+    │
+ 40 │                                      <span class="dot">•</span>       <span class="dot">•</span>
+    │                                      
+ 30 │                      <span class="dot">•</span>               
+    │                                      
+ 20 │              <span class="dot">•</span>               <span class="dot">•</span>       
+    │                              
+ 10 │      <span class="dot">•</span>
+    │
+  0 └──┴───────┴───────┴───────┴───────┴───────┴───────
+      Jan     Feb     Mar     Apr     May     Jun
+</pre>
+        <svg style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none;">
+            <polyline class="smooth-path" points="" stroke="currentColor" stroke-width="2" fill="none"
+                stroke-linejoin="round" />
+        </svg>
+    </figure>
+
+    <p><strong>4. The Dense Sparkline</strong></p>
+    <p>Using block elements (▄, ▀, █) we can simulate a shaded area or a thicker line that conveys volume over time.</p>
+
+    <figure>
+        <pre>
+                      Server Load
+                                              
+    │
+100%│                                  ▄▄      
+ 80%│                                ▄████     
+ 60%│          ▄▄                  ▄███████▄   
+ 40%│        ▄████▄              ▄███████████  
+ 20%│  ▄▄  ▄████████▄          ▄██████████████▄
+  0 └──┴───┴───┴───┴───┴───┴───┴───┴───┴───┴───┴───
+      00h 04h 08h 12h 16h 20h 24h 04h 08h 12h 16h
+</pre>
+    </figure>
+    <h2 id="bar-charts">Bar Charts & Histograms</h2>
+
+    <p>Exploring categorical data and distributions using solid block geometry. ASCII block characters provide excellent
+        visual weight for comparisons.</p>
+
+    <p><strong>1. Horizontal Bar Chart</strong></p>
+    <p>Good for long category labels and simple magnitude comparisons.</p>
+
+    <figure>
+        <pre>
+                      Top Languages 2024
+                                              
+    JavaScript │ ██████████████████████████████████ 68%
+        Python │ ███████████████████████▌ 47%
+          Java │ ███████████████▌ 31%
+    TypeScript │ ███████████████ 30%
+            C# │ █████████████▌ 27%
+           C++ │ ███████████ 22%
+            Go │ █████▌ 11%
+          Rust │ ████▌ 9%
+               │
+               └─┴─────┴─────┴─────┴─────┴─────┴─────┴─
+                 0    10    20    30    40    50    60
+</pre>
+    </figure>
+
+    <p><strong>2. Vertical Grouped Bar Chart</strong></p>
+    <p>Comparing multiple datasets across the same temporal or categorical axis using different shading intervals.</p>
+
+    <figure>
+        <pre>
+                      Q1 vs Q2 Sales
+                                              
+    │                   ██                  
+ 40 │                   ██          ██      
+    │                   ██          ██      
+ 30 │                   ██  ░░      ██      
+    │           ██      ██  ░░      ██  ░░  
+ 20 │           ██      ██  ░░      ██  ░░  
+    │           ██  ░░  ██  ░░      ██  ░░  
+ 10 │   ██      ██  ░░  ██  ░░      ██  ░░  
+    │   ██  ░░  ██  ░░  ██  ░░      ██  ░░  
+    │   ██  ░░  ██  ░░  ██  ░░      ██  ░░  
+  0 └───▀▀──┴┴──▀▀──┴┴──▀▀──┴┴──────▀▀──┴┴──
+      North    South   East    West
+
+      ██ Q1   ░░ Q2
+</pre>
+    </figure>
+
+    <p><strong>3. Distribution Histogram</strong></p>
+    <p>Plotting frequency data continuously without gaps between bars to visualize shape and spread.</p>
+
+    <figure>
+        <pre>
+                      Response Times (ms)
+                                              
+    │
+ 60 │               █
+    │              ███             
+ 40 │             █████
+    │             ██████                 █
+ 20 │            ████████               ███
+    │   █       ██████████             █████
+    │   █       ██████████             █████
+  0 └───▀───┴───▀▀▀▀▀▀▀▀▀▀──┴───┴───┴──▀▀▀▀▀┴───┴──
+       10  20  30  40  50  60  70  80  90 100 110 120
+</pre>
+    </figure>
+
+    <h2 id="animated-plots">Interactive & Animated Plots</h2>
+
+    <p>While static text is beautiful, introducing CSS transitions and JavaScript can bring monospace plots to life.
+        Let's go completely crazy and see how far we can push this aesthetic.</p>
+
+    <p><strong>1. The Interactive Hover Bar</strong></p>
+    <p>Hover your mouse freely over the visualization area. Instead of CSS overlays, we use JavaScript to dynamically
+        map your mouse position to our text grid columns, swapping the characters beneath your cursor to a dense texture
+        in real-time while preserving the monospace layout entirely.</p>
+
+    <figure>
+        <pre id="interactive-ascii-chart" style="cursor: crosshair;">
+                      Monthly Active Users
+                                              
+ 12k│
+    │
+ 10k│
+    │
+  8k│
+    │                         ░░░           
+  6k│                 ░░░     ░░░           
+    │                 ░░░     ░░░           
+  4k│         ░░░     ░░░     ░░░           
+    │         ░░░     ░░░     ░░░     ░░░   
+  2k│         ░░░     ░░░     ░░░     ░░░   
+    │   ░░░   ░░░     ░░░     ░░░     ░░░   
+  0 └───┴┴┴───┴┴┴─────┴┴┴─────┴┴┴─────┴┴┴───────────
+         Jan     Feb     Mar     Apr     May
+</pre>
+    </figure>
+
+    <p><strong>2. The Infinite ASCII Wave</strong></p>
+    <p>A pure JavaScript visualization calculating an interference sine wave in real-time at 60 FPS, directly plotted
+        into a single <code>&lt;pre&gt;</code> block using character density to simulate shading.</p>
+
+    <figure>
+        <pre id="ascii-wave"></pre>
+    </figure>
+
+    <p><strong>3. The Bouncing Data Point</strong></p>
+    <p>Calculating 2D physics (gravity, velocity, and bounce deflection) on a 60fps loop and mapping the sub-pixel
+        coordinates back into the closest character cell (<code>O</code>) in real-time within a drawn ASCII box.</p>
+
+    <figure>
+        <pre id="ascii-bounce"></pre>
+    </figure>
+
+    <p><strong>4. Conway's Game of Life Simulator</strong></p>
+    <p>A cellular automaton running purely inside a <code>&lt;pre&gt;</code> element. The Javascript iterates through a
+        logical grid array applying the rules of Conway's Game of Life, updating the corresponding block character
+        states (<code>█</code> for alive, <code> </code> for dead).</p>
+
+    <figure>
+        <pre id="ascii-conway"></pre>
+    </figure>
+
+    <p><strong>5. The Matrix Rain Drop</strong></p>
+    <p>A digital rain effect. Columns of randomly changing characters cascading down the fixed grid, swapping symbols
+        continuously exactly as they did in the classic terminal displays.</p>
+
+    <figure>
+        <pre id="ascii-matrix"></pre>
+    </figure>
+
+    <script src="ref/the-monospace-web/src/index.js"></script>
+    <script>
+        // Smooth line code
+        function drawSmoothLines() {
+            const figure = document.getElementById('smooth-figure');
+            if (!figure) return;
+            const dots = figure.querySelectorAll('.dot');
+            const svg = figure.querySelector('svg');
+            const polyline = figure.querySelector('.smooth-path');
+            if (!svg || !polyline) return;
+
+            const svgRect = svg.getBoundingClientRect();
+            let dotData = [];
+            dots.forEach(dot => {
+                const rect = dot.getBoundingClientRect();
+                dotData.push({
+                    x: rect.left + rect.width / 2 - svgRect.left,
+                    y: rect.top + rect.height / 2 - svgRect.top
+                });
+            });
+            dotData.sort((a, b) => a.x - b.x);
+            polyline.setAttribute('points', dotData.map(d => `${d.x},${d.y}`).join(' '));
+        }
+        window.addEventListener('load', drawSmoothLines);
+        window.addEventListener('resize', drawSmoothLines);
+        drawSmoothLines();
+
+        // ------------------------------------------------------------
+        // Interactive ASCII Chart Logic
+        // ------------------------------------------------------------
+        const interactiveChart = document.getElementById('interactive-ascii-chart');
+        if (interactiveChart) {
+            // Store the original state of the text chart
+            const originalText = interactiveChart.textContent;
+
+            interactiveChart.addEventListener('mousemove', (e) => {
+                const rect = interactiveChart.getBoundingClientRect();
+
+                // Calculate font character widths by checking figure dimensions
+                const totalLines = originalText.split('\n').length;
+                const totalCols = originalText.split('\n')[2].length;
+
+                // Map the mouse X pixel coordinate directly to a mono character column index
+                const charWidth = rect.width / totalCols;
+                const mouseCol = Math.floor((e.clientX - rect.left) / charWidth);
+
+                let lines = originalText.split('\n');
+                let newText = "";
+
+                // Sweep over the chart rows and columns
+                for (let i = 0; i < lines.length; i++) {
+                    let line = lines[i];
+                    let newLine = "";
+                    for (let j = 0; j < line.length; j++) {
+                        let char = line[j];
+                        // If we are hovering exactly over the column containing a bar (mapped by column index regions)
+                        // And the character is our light shade texture (░)
+                        const overBar = Math.abs(j - mouseCol) < 3; // column width tolerance
+                        if (overBar && char === '░') {
+                            newLine += '█'; // Swap to solid block
+                        } else {
+                            newLine += char; // Keep original
+                        }
+                    }
+                    newText += newLine + '\n';
+                }
+                // Strip trailing newline added by loop
+                interactiveChart.textContent = newText.slice(0, -1);
+            });
+
+            // Reset to default texture when the mouse leaves the figure entirely
+            interactiveChart.addEventListener('mouseleave', () => {
+                interactiveChart.textContent = originalText;
+            });
+        }
+
+        // ------------------------------------------------------------
+        // ASCII Wave Animation Logic
+        // ------------------------------------------------------------
+        const waveContainer = document.getElementById('ascii-wave');
+        if (waveContainer) {
+            const width = 55;
+            const height = 15;
+            // Palette from lightest to heaviest density
+            const chars = ' .:-=+*#%@';
+            let time = 0;
+
+            function renderWave() {
+                let frame = '';
+                for (let y = 0; y < height; y++) {
+                    for (let x = 0; x < width; x++) {
+                        // Calculate an oscillating interference pattern using sin and cos
+                        const wave1 = Math.sin(x * 0.15 + time) * 3.5;
+                        const wave2 = Math.cos(x * 0.08 - time * 1.2) * 2;
+                        const centerPoint = height / 2;
+
+                        // Distance from the mathematical curve to the current vertical pixel
+                        const distance = Math.abs((wave1 + wave2 + centerPoint) - y);
+
+                        // Map the distance to a character index (closer = darker)
+                        let charIndex = Math.floor((1 - (distance / 3)) * chars.length);
+
+                        if (distance > 3) {
+                            // If far away from the line, just draw empty space
+                            frame += ' ';
+                        } else {
+                            // Bound and draw
+                            charIndex = Math.max(0, Math.min(chars.length - 1, charIndex));
+                            frame += chars[charIndex];
+                        }
+                    }
+                    frame += '\n';
+                }
+
+                // Construct the final text content including the axes labels
+                waveContainer.textContent = "                      Real-time Signal\n\n" + frame +
+                    "  0 └──┴────┴────┴────┴────┴────┴────┴────┴────┴────┴───\n" +
+                    "      0s   1s   2s   3s   4s   5s   6s   7s   8s   9s";
+                time += 0.06;
+                requestAnimationFrame(renderWave); // keep animating infinitely
+            }
+            renderWave();
+        }
+
+        // ------------------------------------------------------------
+        // ASCII Bouncing Ball Physics
+        // ------------------------------------------------------------
+        const bounceContainer = document.getElementById('ascii-bounce');
+        if (bounceContainer) {
+            const width = 50;
+            const height = 15;
+            let cx = 5.0;
+            let cy = 2.0;
+            let vx = 0.5;
+            let vy = 0.0;
+            const gravity = 0.08;
+            const bounce = -0.85;
+
+            function renderBounce() {
+                // Physics update
+                vy += gravity;
+                cx += vx;
+                cy += vy;
+
+                // Floor collision
+                if (cy >= height - 2) {
+                    cy = height - 2;
+                    vy *= bounce;
+                    if (Math.abs(vy) < 0.2) vy = 0.0;
+                    if (vy === 0) vx *= 0.99;
+                }
+                // Ceiling collision
+                if (cy <= 1) {
+                    cy = 1;
+                    vy *= bounce;
+                }
+                // Wall collisions
+                if (cx >= width - 2) {
+                    cx = width - 2;
+                    vx *= -1;
+                } else if (cx <= 1) {
+                    cx = 1;
+                    vx *= -1;
+                }
+
+                // Render grid
+                let frame = '';
+                for (let y = 0; y < height; y++) {
+                    for (let x = 0; x < width; x++) {
+                        if (Math.round(cx) === x && Math.round(cy) === y) {
+                            frame += 'O'; // The ball
+                        } else if (x === 0 && y === 0) {
+                            frame += '┌';
+                        } else if (x === width - 1 && y === 0) {
+                            frame += '┐';
+                        } else if (x === 0 && y === height - 1) {
+                            frame += '└';
+                        } else if (x === width - 1 && y === height - 1) {
+                            frame += '┘';
+                        } else if (x === 0 || x === width - 1) {
+                            frame += '│'; // walls
+                        } else if (y === 0 || y === height - 1) {
+                            frame += '─'; // floor
+                        } else {
+                            frame += ' '; // Empty space
+                        }
+                    }
+                    frame += '\n';
+                }
+                bounceContainer.textContent = frame.slice(0, -1);
+                requestAnimationFrame(renderBounce);
+            }
+            renderBounce();
+        }
+
+        // ------------------------------------------------------------
+        // ASCII Game of Life
+        // ------------------------------------------------------------
+        const conwayContainer = document.getElementById('ascii-conway');
+        if (conwayContainer) {
+            const cols = 60;
+            const rows = 15;
+            let grid = new Array(cols).fill(null).map(() => new Array(rows).fill(0));
+            // Random initial state
+            for (let i = 0; i < cols; i++) {
+                for (let j = 0; j < rows; j++) {
+                    grid[i][j] = Math.random() > 0.85 ? 1 : 0;
+                }
+            }
+
+            let lastConwayTime = 0;
+            function renderConway(time) {
+                requestAnimationFrame(renderConway);
+                if (time - lastConwayTime < 100) return; // run at ~10 FPS for readability
+                lastConwayTime = time;
+
+                let nextGrid = new Array(cols).fill(null).map(() => new Array(rows).fill(0));
+                let frame = '';
+                let aliveCount = 0;
+
+                for (let j = 0; j < rows; j++) {
+                    for (let i = 0; i < cols; i++) {
+                        // Count neighbors
+                        let neighbors = 0;
+                        for (let x = -1; x <= 1; x++) {
+                            for (let y = -1; y <= 1; y++) {
+                                if (x === 0 && y === 0) continue;
+                                const wrapX = (i + x + cols) % cols;
+                                const wrapY = (j + y + rows) % rows;
+                                neighbors += grid[wrapX][wrapY];
+                            }
+                        }
+
+                        // Rules
+                        const state = grid[i][j];
+                        if (state === 0 && neighbors === 3) {
+                            nextGrid[i][j] = 1;
+                        } else if (state === 1 && (neighbors < 2 || neighbors > 3)) {
+                            nextGrid[i][j] = 0;
+                        } else {
+                            nextGrid[i][j] = state;
+                        }
+
+                        // Interactive drop: randomly spawn new life if population gets too low or randomly
+                        if (Math.random() > 0.999) nextGrid[i][j] = 1;
+
+                        if (nextGrid[i][j]) aliveCount++;
+
+                        // Draw
+                        frame += nextGrid[i][j] ? '█' : ' ';
+                    }
+                    frame += '\n';
+                }
+
+                // If completely dead, re-seed
+                if (aliveCount < 10) {
+                    for (let i = 0; i < cols; i++) {
+                        for (let j = 0; j < rows; j++) {
+                            nextGrid[i][j] = Math.random() > 0.85 ? 1 : 0;
+                        }
+                    }
+                }
+
+                grid = nextGrid;
+                conwayContainer.textContent = frame.slice(0, -1);
+            }
+            requestAnimationFrame(renderConway);
+        }
+
+        // ------------------------------------------------------------
+        // ASCII Matrix Rain
+        // ------------------------------------------------------------
+        const matrixContainer = document.getElementById('ascii-matrix');
+        if (matrixContainer) {
+            const cols = 60;
+            const rows = 15;
+            // Initialize staggered drop lengths and positions
+            const drops = new Array(cols).fill(1).map(() => Math.floor(Math.random() * -rows * 2));
+            const dropLengths = new Array(cols).fill(1).map(() => Math.floor(Math.random() * (rows / 2)) + 3);
+
+            const characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@#$%^&*";
+            let grid = new Array(cols).fill(null).map(() => new Array(rows).fill(' '));
+
+            let lastMatrixTime = 0;
+            function renderMatrix(time) {
+                requestAnimationFrame(renderMatrix);
+                if (time - lastMatrixTime < 60) return; // Throttle to ~16 FPS
+                lastMatrixTime = time;
+
+                for (let i = 0; i < cols; i++) {
+                    // Shift column down
+                    for (let j = rows - 1; j > 0; j--) {
+                        grid[i][j] = grid[i][j - 1];
+                    }
+
+                    drops[i]++;
+
+                    // Add new head of drop
+                    if (drops[i] >= 0 && drops[i] < dropLengths[i]) {
+                        grid[i][0] = characters.charAt(Math.floor(Math.random() * characters.length));
+                    } else {
+                        grid[i][0] = ' ';
+                    }
+
+                    // Reset drop when tail passes bottom
+                    if (drops[i] - dropLengths[i] > rows && Math.random() > 0.95) {
+                        drops[i] = Math.floor(Math.random() * -rows); // staggered restart
+                        dropLengths[i] = Math.floor(Math.random() * (rows / 2)) + 3;
+                    }
+
+                    // Randomly mutate existing characters in the stream to mimic the movie
+                    for (let j = 0; j < rows; j++) {
+                        if (grid[i][j] !== ' ' && Math.random() > 0.95) {
+                            grid[i][j] = characters.charAt(Math.floor(Math.random() * characters.length));
+                        }
+                    }
+                }
+
+                // Construct text frame
+                let frame = '';
+                for (let j = 0; j < rows; j++) {
+                    for (let i = 0; i < cols; i++) {
+                        frame += grid[i][j];
+                    }
+                    frame += '\n';
+                }
+                matrixContainer.textContent = frame.slice(0, -1);
+            }
+            requestAnimationFrame(renderMatrix);
+        }
+    </script>
+</body>
+
 </html>
